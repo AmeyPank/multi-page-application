@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
     <title>SignUp Form</title>
     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
 </head>
@@ -35,7 +35,7 @@
     </header>
     <Main>
 
-        <form action="/myction.php" name="myForm" onsubmit="return validate()" method = "post">
+        <form action="index2.html" class="form" >
             <div class="signup">
                 <h1>Signup</h1>
             </div>
@@ -49,7 +49,7 @@
 
 
             <div class="buttons">
-                <button  type="submit">Signup </button>
+                <button  type="submit" onsubmit="auth()">Signup</button>
             </div>
 
 
@@ -61,30 +61,49 @@
     
     <script>
 
-function validate(){
-    var name = document.myForm.name;
-    var email = document.myForm.email;
-    var password = document.myForm.pass;
-    var cpassword = document.myForm.cpass;
+function auth(){
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("fpass").value;
 
-if(name.value.length <= 0){
-    alert("Name is required");
-    name.focus();
-    return false;
-}
-if(email.value.length <= 0){
-    alert("Email is required");
-    email.focus();
-    return false;
-}
+            if(email =="myemail@gmail.com" && password =="Abhishek123#!"){
+            window.location.assign("index2.html")
+            alert("Login Successfully");
+            }
+            else
+            {
+                alert("Invalid Information");
+            }
+        }
 
-if(fpass.value.length<=0){
-    alert("Password is required");
-    fpass.focus();
-    return false;
-}
-    return false;
-}
+// function validate(){
+//     var name = document.myForm.name;
+//     var email = document.myForm.email;
+//     var password = document.myForm.pass;
+//     var cpassword = document.myForm.cpass;
+
+// if(name.value.length <= 0){
+//     alert("Name is required");
+//     name.focus();
+//     return false;
+// }
+// if(email.value.length =="myemail@gmail.com"){
+//     alert("Email is required");
+//     email.focus();
+//     return false;
+// }
+
+// if(fpass.value.length=="Abhishek123#!"){
+//     alert("Password is required");
+//     fpass.focus();
+//     return false;
+// }
+// if(fcpass.value.length=="Abhishek123#!"){
+//     alert("Password is required");
+//     fcpass.focus();
+//     return false;
+// }
+//     return false;
+// }
     </script>
 </body>
 
